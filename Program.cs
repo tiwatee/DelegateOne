@@ -2,6 +2,7 @@
 {
     internal class Program
     {
+        public delegate bool DUserCount(Names n);
         /// <summary>
         /// a predicate to check if username is equal to likelyUsername.
         ///  a predicate is to return true or false
@@ -9,8 +10,19 @@
         /// <param name="args"></param>
         static void Main(string[] args)
         {
-            Predicate<Names> dUserCount = x => x.UserName == (x.FirstName + "." + x.LastName); //a predicate delegate
-
+            //Predicate<Names> dUserCount = x => x.UserName == (x.FirstName + "." + x.LastName); //a predicate delegate
+            
+            DUserCount dUserCount = delegate (Names x)
+            {
+                if (x.UserName == (x.FirstName + "." + x.LastName))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            };
 
             Names obj = new Names(); // An instance of the class Names
             obj.FirstName = "Jay";
