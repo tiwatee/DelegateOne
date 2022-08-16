@@ -4,8 +4,7 @@
     {
         public delegate bool DUserCount(Names n);
         /// <summary>
-        /// a predicate to check if username is equal to likelyUsername.
-        ///  a predicate is to return true or false
+        /// a delegate to check if username is equal to likelyUsername.
         /// </summary>
         /// <param name="args"></param>
         static void Main(string[] args)
